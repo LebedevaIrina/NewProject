@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="MyApp" packages="">
+    <Appenders>
+        <File name="MyFile" fileName="./app.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS}] | %-5p | %-1t | %-11c{1} | %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%d{HH:mm:ss.SSS}] | %-5p | %-1t | %-11c{1} | %m%n}{FATAL=red blink, ERROR=red blink, WARN=yellow bold, INFO=blue, DEBUG=green bold, TRACE=black}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="MyFile"/>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
